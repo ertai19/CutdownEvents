@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown to 2025 Events</title>
-    <!-- Vinculando el archivo CSS externo -->
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script>
         function fetchEvents() {
             fetch('/events')
@@ -29,9 +28,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Countdown to 2025 Events</h1>
+        <!-- Título OMNICHANNEL -->
+        <h1 class="main-title">OMNICHANNEL</h1>
+
+        <!-- Subtítulo Countdown to 2025 Events -->
+        <h2 class="sub-title">Countdown to 2025 Events</h2>
+
+        <!-- Contenedor de eventos -->
         <div id="events"></div>
     </div>
 </body>
 </html>
-

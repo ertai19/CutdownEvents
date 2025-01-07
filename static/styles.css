@@ -24,14 +24,23 @@ body {
     width: 100%;
 }
 
-/* Título principal */
-h1 {
-    font-size: 3rem;
-    margin-bottom: 40px;
+/* Título principal OMNICHANNEL */
+.main-title {
+    font-size: 4rem; /* Tamaño grande */
+    margin-bottom: 10px; /* Espacio abajo */
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtítulo Countdown to 2025 Events */
+.sub-title {
+    font-size: 2.5rem; /* Tamaño más pequeño que el título */
+    margin-bottom: 40px; /* Espacio para separar el subtítulo de los eventos */
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilo de las tarjetas de evento */
