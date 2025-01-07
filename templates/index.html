@@ -15,7 +15,10 @@
                     eventsDiv.innerHTML = '';  // Limpiar los eventos anteriores
                     for (const [event, time] of Object.entries(data)) {
                         // Mostrar cada evento con el formato deseado
-                        eventsDiv.innerHTML += `<p>${event}: ${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds</p>`;
+                        eventsDiv.innerHTML += `<div class="event-card">
+                            <p class="event-name">${event}</p>
+                            <p class="event-time">${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds</p>
+                        </div>`;
                     }
                 });
         }
@@ -25,9 +28,10 @@
     </script>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Countdown to 2025 Events</h1>
         <div id="events"></div>
     </div>
 </body>
 </html>
+
