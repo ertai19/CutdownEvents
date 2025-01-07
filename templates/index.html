@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to 2025 Events</title>
+    <script>
+        function fetchEvents() {
+            fetch('/events')
+                .then(response => response.json())
+                .then(data => {
+                    const eventsDiv = document.getElementById('events');
+                    eventsDiv.innerHTML = '';
+                    for (const [event, time] of Object.entries(data)) {
+                        eventsDiv.innerHTML += `<p>${event}: ${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds</p>`;
+                    }
+                });
+        }
+
+        setInterval(fetchEvents, 1000);
+        window.onload = fetchEvents;
+    </script>
+</head>
+<body>
+    <h1>Countdown to 2025 Events</h1>
+    <div id="events"></div>
+</body>
+</html>

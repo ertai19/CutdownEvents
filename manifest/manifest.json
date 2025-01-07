@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.11/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.11",
+  "version": "1.0.0",
+  "id": "your-app-id",
+  "packageName": "com.example.daysuntil",
+  "developer": {
+    "name": "Your Name",
+    "websiteUrl": "https://yourwebsite.com",
+    "privacyUrl": "https://yourwebsite.com/privacy",
+    "termsOfUseUrl": "https://yourwebsite.com/terms"
+  },
+  "name": {
+    "short": "DaysUntil",
+    "full": "Days Until Key Events"
+  },
+  "description": {
+    "short": "Displays countdowns to key events.",
+    "full": "This app displays the time remaining until key events."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    {
+      "entityId": "daysUntilTab",
+      "name": "Days Until",
+      "contentUrl": "https://your-hosted-app-url.com/",
+      "websiteUrl": "https://your-hosted-app-url.com/",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["your-hosted-app-url.com"]
+}
