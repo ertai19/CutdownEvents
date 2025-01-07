@@ -32,18 +32,42 @@
 3. **Access the Application**:
    - Open your web browser and go to `http://127.0.0.1:5000/`.
 
-## Embedding in Microsoft Teams
 
-1. **Host Your Flask App**: Ensure your Flask app is hosted and accessible over the internet.
+## Deploying to Heroku
 
-2. **Create a Teams App Package**:
-   - Update the `manifest.json` file with your app details and hosted URL.
-   - Create a zip file containing `manifest.json`, `color.png`, and `outline.png`.
+1. **Create a `Procfile`**: In the root directory of your project, create a file named `Procfile` with the following content:
+   ```
+   web: python app.py
+   ```
 
-3. **Upload to Teams**:
-   - Go to Microsoft Teams.
-   - Click on "Apps" in the left sidebar.
-   - Click on "Upload a custom app" and upload your zip file.
+2. **Create a `requirements.txt`**: Ensure you have a `requirements.txt` file in your project directory with all the dependencies listed.
+
+3. **Create a `runtime.txt`**: In the root directory of your project, create a file named `runtime.txt` with the following content:
+   ```
+   python-3.8.10
+   ```
+
+4. **Initialize a Git Repository**:
+   ```sh
+   git init
+   git add .
+   git commit -m "Initial commit"
+   ```
+
+5. **Create a Heroku App**:
+   ```sh
+   heroku create your-app-name
+   ```
+
+6. **Deploy to Heroku**:
+   ```sh
+   git push heroku master
+   ```
+
+7. **Open the App**:
+   ```sh
+   heroku open
+   ```
 
 ## Usage
 
