@@ -1,0 +1,48 @@
+/* Estilos globales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* Color de fondo suave */
+    color: #333; /* Color de texto oscuro para contraste */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: #4A90E2;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de eventos */
+#events {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 600px;
+    width: 100%;
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f7f7f7; /* Fondo ligeramente gris */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para cada evento */
+p:nth-child(odd) {
+    background-color: #e6f7ff; /* Fondo azul suave para eventos impares */
+}
+
+p:nth-child(even) {
+    background-color: #f9e6ff; /* Fondo rosa suave para eventos pares */
+}
