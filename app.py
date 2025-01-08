@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 # Define key events and their dates
 events = {
-    "Black Friday 2025": datetime(2025, 11, 28),
+    "Rebajas Verano": datetime(2025, 6, 25),
+    "Black Friday": datetime(2025, 11, 28),
+    "Rebajas Invierno": datetime(2025, 12, 25),
     # Add more events here
 }
 
