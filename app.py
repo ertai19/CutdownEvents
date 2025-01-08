@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 from datetime import datetime
+from dateutil.relativedelta import relativedelta  # Importa esta librería para cálculos precisos
 import os
 
 app = Flask(__name__)
@@ -17,13 +18,13 @@ def index():
     now = datetime.now()
     time_until_events = {}
     for event, date in events.items():
-        delta = date - now
+        delta = relativedelta(date, now)  # Usa relativedelta para calcular las diferencias exactas
         time_until_events[event] = {
-            "months": delta.days // 30,
-            "days": delta.days % 30,
-            "hours": delta.seconds // 3600,
-            "minutes": (delta.seconds % 3600) // 60,
-            "seconds": delta.seconds % 60
+            "months": delta.months,
+            "days": delta.days,
+            "hours": delta.hours,
+            "minutes": delta.minutes,
+            "seconds": delta.seconds
         }
     return render_template('index.html', events=time_until_events)
 
@@ -35,13 +36,13 @@ def get_events():
     
     time_until_events = {}
     for event, date in sorted_events:
-        delta = date - now
+        delta = relativedelta(date, now)  # Usa relativedelta para cálculos precisos
         time_until_events[event] = {
-            "months": delta.days // 30,
-            "days": delta.days % 30,
-            "hours": delta.seconds // 3600,
-            "minutes": (delta.seconds % 3600) // 60,
-            "seconds": delta.seconds % 60
+            "months": delta.months,
+            "days": delta.days,
+            "hours": delta.hours,
+            "minutes": delta.minutes,
+            "seconds": delta.seconds
         }
     
     return jsonify(time_until_events)
