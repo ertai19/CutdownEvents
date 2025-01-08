@@ -12,13 +12,21 @@
                 .then(data => {
                     const eventsDiv = document.getElementById('events');
                     eventsDiv.innerHTML = '';  // Limpiar los eventos anteriores
-                    for (const [event, time] of Object.entries(data)) {
-                        // Mostrar cada evento con el formato deseado
+
+                    // Convertir el objeto de eventos en un array y ordenarlo por la fecha
+                    const sortedEvents = Object.entries(data).sort((a, b) => {
+                        const dateA = new Date(2025, a[1].month - 1, a[1].day); // Convierte los valores a fechas
+                        const dateB = new Date(2025, b[1].month - 1, b[1].day);
+                        return dateA - dateB;  // Ordena de manera ascendente
+                    });
+
+                    // Mostrar los eventos ordenados
+                    sortedEvents.forEach(([event, time]) => {
                         eventsDiv.innerHTML += `<div class="event-card">
                             <p class="event-name">${event}</p>
                             <p class="event-time">${time.months} months, ${time.days} days, ${time.hours} hours, ${time.minutes} minutes, ${time.seconds} seconds</p>
                         </div>`;
-                    }
+                    });
                 });
         }
 
