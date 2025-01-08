@@ -30,8 +30,11 @@ def index():
 @app.route('/events')
 def get_events():
     now = datetime.now()
+    # Ordena los eventos por la fecha de manera ascendente
+    sorted_events = sorted(events.items(), key=lambda x: x[1])
+    
     time_until_events = {}
-    for event, date in events.items():
+    for event, date in sorted_events:
         delta = date - now
         time_until_events[event] = {
             "months": delta.days // 30,
@@ -40,6 +43,7 @@ def get_events():
             "minutes": (delta.seconds % 3600) // 60,
             "seconds": delta.seconds % 60
         }
+    
     return jsonify(time_until_events)
 
 if __name__ == '__main__':
